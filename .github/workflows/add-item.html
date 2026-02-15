@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS for additional styling (used alongside custom CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Add Inventory Item | InventoryPro</title>
+    <!-- External CSS and Font Awesome for icons -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <!-- Contains logo, tagline, and main navigation menu -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo and Branding -->
+            <div class="logo">
+                <h1><i class="fas fa-boxes"></i> InventoryPro</h1>
+                <p class="tagline">Professional Inventory Management Solutions</p>
+            </div>
+            <!-- Main Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="inventory.html"><i class="fas fa-clipboard-list"></i> Inventory</a></li>
+                    <li><a href="add-item.html" class="active"><i class="fas fa-plus-circle"></i> Add Item</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT SECTION ==================== -->
+    <main class="container">
+        <!-- Page Title and Description -->
+        <div class="page-title">
+            <h2>Add New Inventory Item</h2>
+            <p>Use this form to add new items to your inventory. All fields marked with * are required.</p>
+        </div>
+
+        <!-- ==================== ADD ITEM FORM ==================== -->
+        <div class="form-container">
+            <form action="#" method="post" class="inventory-form">
+                <!-- Row 1: Item Name and ID (Required Fields) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="item-name">Item Name *</label>
+                        <input type="text" id="item-name" name="item-name" placeholder="Enter product name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-id">Item ID *</label>
+                        <input type="text" id="item-id" name="item-id" placeholder="e.g., ELEC-1001" required>
+                    </div>
+                </div>
+
+                <!-- Row 2: Category and Supplier -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="supplies">Office Supplies</option>
+                            <option value="software">Software</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="supplier">Supplier</label>
+                        <input type="text" id="supplier" name="supplier" placeholder="Supplier name">
+                    </div>
+                </div>
+
+                <!-- Row 3: Quantity and Reorder Level -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Initial Quantity *</label>
+                        <input type="number" id="quantity" name="quantity" min="0" step="1" placeholder="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reorder-level">Reorder Level *</label>
+                        <input type="number" id="reorder-level" name="reorder-level" min="0" step="1" placeholder="Minimum stock level" required>
+                    </div>
+                </div>
+
+                <!-- Row 4: Unit Price and Storage Location -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="unit-price">Unit Price ($) *</label>
+                        <input type="number" id="unit-price" name="unit-price" min="0" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Storage Location</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Warehouse A, Shelf 5">
+                    </div>
+                </div>
+
+                <!-- ========== PRIORITY LEVEL SECTION ========== -->
+                <div class="form-section">
+                    <h3>Item Priority Level</h3>
+                    <div class="radio-group">
+                        <!-- Low Priority Option (Default) -->
+                        <div class="radio-option">
+                            <input type="radio" id="priority-low" name="priority" value="low" checked>
+                            <label for="priority-low">Low Priority</label>
+                            <span class="radio-description">Standard items with consistent demand</span>
+                        </div>
+                        <!-- Medium Priority Option -->
+                        <div class="radio-option">
+                            <input type="radio" id="priority-medium" name="priority" value="medium">
+                            <label for="priority-medium">Medium Priority</label>
+                            <span class="radio-description">Important items with seasonal demand</span>
+                        </div>
+                        <!-- High Priority Option -->
+                        <div class="radio-option">
+                            <input type="radio" id="priority-high" name="priority" value="high">
+                            <label for="priority-high">High Priority</label>
+                            <span class="radio-description">Critical items, always keep in stock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ITEM OPTIONS SECTION ========== -->
+                <div class="form-section">
+                    <h3>Item Options</h3>
+                    <div class="checkbox-group">
+                        <!-- Special handling checkboxes -->
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="requires-refrigeration" name="requires-refrigeration">
+                            <label for="requires-refrigeration">Requires Refrigeration</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="fragile-item" name="fragile-item">
+                            <label for="fragile-item">Fragile Item (Handle with care)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="hazardous-material" name="hazardous-material">
+                            <label for="hazardous-material">Hazardous Material</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="serial-tracked" name="serial-tracked" checked>
+                            <label for="serial-tracked">Track by Serial Number</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ADDITIONAL INFORMATION SECTION ========== -->
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    <!-- Product Description Textarea -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="description">Product Description</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Enter detailed product description..."></textarea>
+                        </div>
+                    </div>
+                    <!-- Internal Notes Textarea -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="notes">Internal Notes</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any internal notes or special instructions..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== FORM ACTION BUTTONS ========== -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Add Item to Inventory
+                    </button>
+                    <button type="reset" class="btn btn-outline">
+                        <i class="fas fa-undo"></i> Clear Form
+                    </button>
+                    <a href="inventory.html" class="btn btn-secondary">
+                        <i class="fas fa-ban"></i> Cancel
+                    </a>
+                </div>
+            </form>
+
+            <!-- ========== FORM HELP SIDEBAR ========== -->
+            <div class="form-help">
+                <h3><i class="fas fa-info-circle"></i> Form Instructions</h3>
+                <p>Complete all required fields to add a new item to your inventory. The system will automatically generate alerts when stock levels fall below the reorder level. You can edit item details later from the inventory page.</p>
+                <p>For bulk imports or API integrations, please contact our <a href="mailto:support@inventorypro.com">support team</a>.</p>
+                <p>Need help with inventory classification? Visit the <a href="https://www.investopedia.com/terms/i/inventory.asp" target="_blank">Investopedia inventory guide</a> for industry standards.</p>
+            </div>
+        </div>
+
+        <!-- ========== STORAGE GUIDELINES VISUALIZATION ========== -->
+        <div class="box-model-demo">
+            <h3>Inventory Storage Guidelines</h3>
+            <div class="box-container">
+                <!-- Cold Storage Box -->
+                <div class="box cold-storage">
+                    <h4>Cold Storage</h4>
+                    <p>Items marked "Requires Refrigeration"</p>
+                    <div class="temp-indicator">2-8°C</div>
+                </div>
+                <!-- Fragile Items Box -->
+                <div class="box fragile-storage">
+                    <h4>Fragile Items</h4>
+                    <p>Handle with care, store separately</p>
+                    <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                </div>
+                <!-- Hazardous Materials Box -->
+                <div class="box hazardous-storage">
+                    <h4>Hazardous Materials</h4>
+                    <p>Special containment required</p>
+                    <div class="icon"><i class="fas fa-radiation"></i></div>
+                </div>
+                <!-- General Storage Box -->
+                <div class="box general-storage">
+                    <h4>General Storage</h4>
+                    <p>Standard warehouse conditions</p>
+                    <div class="temp-indicator">15-25°C</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Contains company info, quick links, and contact details -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Description -->
+                <div class="footer-section">
+                    <h4>InventoryPro</h4>
+                    <p>Professional inventory management solutions since 2010. Serving businesses worldwide with reliable, scalable inventory systems.</p>
+                </div>
+                <!-- Quick Links Navigation -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Current Inventory</a></li>
+                        <li><a href="add-item.html">Add New Item</a></li>
+                        <li><a href="reports.html">Generate Reports</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Information -->
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500</p>
+                    <p><i class="fas fa-phone"></i> (+233) 206-845-993</p>
+                    <p><i class="fas fa-envelope"></i> inventorypro@gmail.com</p>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 InventoryPro Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

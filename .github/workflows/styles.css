@@ -1,0 +1,1157 @@
+/* ========== GLOBAL RESET ========== */
+/* Removes default margins/padding and sets box-sizing to border-box for consistent layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BODY & TYPOGRAPHY ========== */
+/* Sets default font, colors, and background for the entire site */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ========== CONTAINER ========== */
+/* Centralized container for consistent max-width and padding across all pages */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== HEADINGS ========== */
+/* Consistent heading styles with color scheme */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ========== LINKS ========== */
+/* Default link styling with hover effects */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* ========== HEADER SECTION ========== */
+/* Main header with gradient background and sticky positioning */
+.main-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Flex layout for header container */
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo h1 {
+    color: white;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tagline {
+    color: #ecf0f1;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ========== NAVIGATION ========== */
+/* Main navigation menu styling */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* ========== MAIN CONTENT ========== */
+/* Main content area with minimum height calculation */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* Page title section with bottom border */
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title p {
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ========== LAYOUT GRID ========== */
+/* Two-column layout for home page */
+.content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Column containers */
+.col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========== TABLE STYLES ========== */
+/* Invisible table used for layout purposes */
+.invisible-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.invisible-table td.layout-cell {
+    padding: 1rem;
+    vertical-align: top;
+}
+
+/* Data table styling with alternating rows */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.data-table tr:hover {
+    background-color: #e8f4fc;
+}
+
+/* Inventory table specific styling */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.inventory-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 600;
+}
+
+.inventory-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ========== STATUS INDICATORS ========== */
+/* Color-coded status badges for inventory items */
+.status {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.status.in-stock {
+    background-color: #d5eddb;
+    color: #155724;
+}
+
+.status.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Warning and danger text colors */
+.warning {
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.danger {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Total row styling */
+.total-row {
+    font-weight: 600;
+    background-color: #ecf0f1 !important;
+}
+
+.summary-cell {
+    font-weight: 600;
+    text-align: right;
+}
+
+/* ========== FORM STYLES ========== */
+/* Container for forms with white background and shadow */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Flex row for form fields */
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form group container */
+.form-group {
+    flex: 1;
+}
+
+.form-group.full-width {
+    flex: 0 0 100%;
+}
+
+/* Form labels */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Form input styling */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+/* Focus state for inputs */
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Form section divider */
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Radio and checkbox groups */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio-option, .checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+.radio-description {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 2px;
+}
+
+/* ========== BUTTONS ========== */
+/* Form action buttons container */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Base button styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+/* Primary button (blue) */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* Secondary button (dark blue) */
+.btn-secondary {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #1a252f;
+    color: white;
+}
+
+/* Outline button (transparent with blue border) */
+.btn-outline {
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+}
+
+.btn-outline:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Small button variant */
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+/* ========== IMAGE STYLES ========== */
+/* Rollover image container with hover effects */
+.rollover-container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.rollover-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    border: 3px solid #3498db;
+}
+
+.rollover-image:hover {
+    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Linked image with hover border effect */
+.linked-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: 3px solid transparent;
+}
+
+.linked-image:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Image caption styling */
+.image-caption {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Image container with overlay */
+.image-container {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.analysis-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(44, 62, 80, 0.85);
+    color: white;
+    padding: 1rem;
+}
+
+/* ========== BOX MODEL DEMO ========== */
+/* Container for colored boxes (CSS Box Model demonstration) */
+.box-model-demo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+/* Flex container for boxes */
+.box-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Base box styling */
+.box {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    position: relative;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Category-specific box colors */
+.box.electronics {
+    background-color: #3498db;
+}
+
+.box.furniture {
+    background-color: #2ecc71;
+}
+
+.box.supplies {
+    background-color: #e74c3c;
+}
+
+.box.software {
+    background-color: #9b59b6;
+}
+
+/* Storage type box colors */
+.box.cold-storage {
+    background-color: #3498db;
+}
+
+.box.fragile-storage {
+    background-color: #f39c12;
+}
+
+.box.hazardous-storage {
+    background-color: #e74c3c;
+}
+
+.box.general-storage {
+    background-color: #2ecc71;
+}
+
+/* Box indicators */
+.temp-indicator, .icon {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ========== CARD COMPONENTS ========== */
+/* Feature, stats, summary, and report cards */
+.feature-box, .stats-box, .summary-card, .report-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3, .stats-box h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+}
+
+/* Summary card specific styles */
+.summary-card {
+    text-align: center;
+}
+
+.summary-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.summary-value.success {
+    color: #27ae60;
+}
+
+.summary-label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+/* Report card specific styles */
+.report-card {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.report-icon {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+/* ========== FILTER SECTION ========== */
+/* Filter controls for inventory page */
+.filter-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* ========== FOOTER SECTION ========== */
+/* Main footer styling */
+.main-footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+}
+
+/* Footer content grid layout */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p, .footer-section li {
+    color: #bdc3c7;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+}
+
+/* Footer bottom with copyright */
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer-bottom a {
+    color: #bdc3c7;
+}
+
+.footer-bottom a:hover {
+    color: #3498db;
+}
+
+/* ========== UTILITY CLASSES ========== */
+/* External link box styling */
+.external-link {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+/* Table container */
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Report output container */
+.report-output {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Report analysis box */
+.report-analysis {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+/* Image analysis container */
+.image-analysis {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Preserving original layout while adding responsive support */
+
+/* Tablets and small desktops */
+@media screen and (max-width: 992px) {
+    /* Keep original layout but adjust for smaller screens */
+    .content-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Large tablets and landscape phones */
+@media screen and (max-width: 768px) {
+    /* Stack header elements */
+    .main-header .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .logo h1 {
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
+    /* Adjust navigation */
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .main-nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Stack form rows */
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Stack boxes */
+    .box-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .box {
+        margin: 0;
+    }
+    
+    /* Make filters stack */
+    .filter-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .filter-label {
+        margin-bottom: 0.25rem;
+    }
+    
+    /* Adjust footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    /* Make tables horizontally scrollable */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .inventory-table,
+    .data-table {
+        min-width: 800px;
+    }
+    
+    /* Convert invisible table to block layout */
+    .invisible-table,
+    .invisible-table tbody,
+    .invisible-table tr,
+    .invisible-table td {
+        display: block;
+    }
+    
+    .invisible-table td.layout-cell {
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    /* Adjust headings */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Stack buttons */
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Adjust image sizes */
+    .rollover-image {
+        height: 200px;
+    }
+    
+    .linked-image {
+        height: 180px;
+    }
+    
+    .analysis-image {
+        height: 250px;
+    }
+    
+    /* Adjust cards */
+    .report-card {
+        height: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 576px) {
+    /* Further reduce font sizes */
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .tagline {
+        font-size: 0.8rem;
+    }
+    
+    /* Adjust spacing */
+    .container {
+        padding: 0 12px;
+    }
+    
+    main {
+        padding: 1.5rem 0;
+    }
+    
+    .page-title {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    /* Form adjustments */
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-section {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    /* Radio and checkbox adjustments */
+    .radio-option, .checkbox-option {
+        flex-wrap: wrap;
+    }
+    
+    .radio-description {
+        width: 100%;
+        margin-left: 28px;
+    }
+    
+    /* Box adjustments */
+    .box {
+        padding: 1.2rem;
+    }
+    
+    .temp-indicator, .icon {
+        font-size: 1.2rem;
+    }
+    
+    /* Image adjustments */
+    .rollover-image {
+        height: 180px;
+    }
+    
+    .linked-image {
+        height: 160px;
+    }
+    
+    .analysis-image {
+        height: 200px;
+    }
+    
+    .image-overlay {
+        padding: 0.75rem;
+    }
+    
+    .image-overlay h4 {
+        font-size: 1rem;
+    }
+    
+    .image-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    /* Footer adjustments */
+    .footer-section h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-section p, 
+    .footer-section li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small phones */
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .main-nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-btn {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .box {
+        padding: 1rem;
+    }
+    
+    .box h4 {
+        font-size: 1rem;
+    }
+    
+    .box p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+/* Hide navigation and buttons when printing */
+@media print {
+    .main-header, .main-footer, .form-actions, .btn,
+    .filter-section, .rollover-container {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+    
+    .box {
+        break-inside: avoid;
+        border: 2px solid #333;
+        color: #000 !important;
+        background-color: #f5f5f5 !important;
+    }
+    
+    .box h4, .box p {
+        color: #000 !important;
+    }
+    
+    h1, h2, h3, h4 {
+        color: #000;
+        page-break-after: avoid;
+    }
+    
+    .data-table th,
+    .inventory-table th {
+        background-color: #ddd !important;
+        color: #000;
+    }
+}
+
+/* ========== TOUCH OPTIMIZATIONS ========== */
+/* Improve touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .btn, 
+    .filter-btn,
+    .main-nav a,
+    .footer-section a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .rollover-image:hover,
+    .linked-image:hover,
+    .btn:hover,
+    .filter-btn:hover {
+        transform: none;
+        filter: none;
+    }
+    
+    /* Add active states instead */
+    .btn:active,
+    .filter-btn:active,
+    .main-nav a:active {
+        opacity: 0.8;
+    }
+    
+    /* Prevent text size adjustment on orientation change */
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Better scrolling for tables */
+    .table-container {
+        -webkit-overflow-scrolling: touch;
+    }
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS for additional styling (used alongside custom CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Inventory Reports | InventoryPro</title>
+    <!-- External CSS and Font Awesome for icons -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <!-- Contains logo, tagline, and main navigation menu -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo and Branding -->
+            <div class="logo">
+                <h1><i class="fas fa-boxes"></i> InventoryPro</h1>
+                <p class="tagline">Professional Inventory Management Solutions</p>
+            </div>
+            <!-- Main Navigation Menu -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="inventory.html"><i class="fas fa-clipboard-list"></i> Inventory</a></li>
+                    <li><a href="add-item.html"><i class="fas fa-plus-circle"></i> Add Item</a></li>
+                    <li><a href="reports.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT SECTION ==================== -->
+    <main class="container">
+        <!-- Page Title and Description -->
+        <div class="page-title">
+            <h2>Inventory Reports & Analytics</h2>
+            <p>Generate detailed reports and analyze inventory performance metrics.</p>
+        </div>
+
+        <!-- ========== AVAILABLE REPORTS SECTION ========== -->
+        <!-- Grid of report cards showing different report types -->
+        <div class="reports-section">
+            <h3><i class="fas fa-file-alt"></i> Available Reports</h3>
+            
+            <!-- Using invisible table for layout (legacy approach) -->
+            <table class="invisible-table">
+                <!-- First Row of Report Cards -->
+                <tr>
+                    <!-- Inventory Turnover Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Inventory Turnover</h4>
+                            <p>Analyze how quickly inventory is sold and replaced over a specific period.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                    <!-- Low Stock Alert Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h4>Low Stock Alert</h4>
+                            <p>Identify items that are below reorder levels and need replenishment.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                    <!-- Inventory Valuation Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h4>Inventory Valuation</h4>
+                            <p>Calculate the total value of inventory using different valuation methods.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Second Row of Report Cards -->
+                <tr>
+                    <!-- Aging Inventory Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-calendar-times"></i>
+                            </div>
+                            <h4>Aging Inventory</h4>
+                            <p>Identify slow-moving or obsolete items that haven't sold in a while.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                    <!-- Supplier Performance Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4>Supplier Performance</h4>
+                            <p>Evaluate suppliers based on delivery times, quality, and pricing.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                    <!-- Category Analysis Report Card -->
+                    <td class="layout-cell">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Category Analysis</h4>
+                            <p>Break down inventory performance by product category.</p>
+                            <a href="#" class="btn btn-small">Generate Report</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ========== CUSTOM REPORT GENERATOR FORM ========== -->
+        <div class="form-container">
+            <h3><i class="fas fa-cogs"></i> Custom Report Generator</h3>
+            <form action="#" method="post" class="report-form">
+                <!-- Row 1: Report Type and Date Range -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report-type">Report Type *</label>
+                        <select id="report-type" name="report-type" required>
+                            <option value="">Select report type</option>
+                            <option value="turnover">Inventory Turnover</option>
+                            <option value="valuation">Inventory Valuation</option>
+                            <option value="aging">Aging Inventory</option>
+                            <option value="supplier">Supplier Performance</option>
+                            <option value="category">Category Analysis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-range">Date Range *</label>
+                        <select id="date-range" name="date-range" required>
+                            <option value="">Select date range</option>
+                            <option value="last-week">Last 7 Days</option>
+                            <option value="last-month">Last 30 Days</option>
+                            <option value="last-quarter">Last Quarter</option>
+                            <option value="last-year">Last Year</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ========== REPORT FORMAT SECTION ========== -->
+                <div class="form-section">
+                    <h3>Report Format</h3>
+                    <div class="radio-group">
+                        <!-- PDF Format Option (Default) -->
+                        <div class="radio-option">
+                            <input type="radio" id="format-pdf" name="format" value="pdf" checked>
+                            <label for="format-pdf">PDF Document</label>
+                            <span class="radio-description">Best for printing and sharing</span>
+                        </div>
+                        <!-- Excel Format Option -->
+                        <div class="radio-option">
+                            <input type="radio" id="format-excel" name="format" value="excel">
+                            <label for="format-excel">Excel Spreadsheet</label>
+                            <span class="radio-description">Best for data analysis</span>
+                        </div>
+                        <!-- HTML Format Option -->
+                        <div class="radio-option">
+                            <input type="radio" id="format-html" name="format" value="html">
+                            <label for="format-html">HTML Web Page</label>
+                            <span class="radio-description">Best for online viewing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== REPORT OPTIONS SECTION ========== -->
+                <div class="form-section">
+                    <h3>Report Options</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="include-charts" name="include-charts" checked>
+                            <label for="include-charts">Include Charts & Graphs</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="include-summary" name="include-summary" checked>
+                            <label for="include-summary">Include Executive Summary</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="include-details" name="include-details">
+                            <label for="include-details">Include Detailed Item List</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="compare-period" name="compare-period">
+                            <label for="compare-period">Compare with Previous Period</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ADDITIONAL PARAMETERS SECTION ========== -->
+                <div class="form-section">
+                    <h3>Additional Parameters</h3>
+                    <!-- Category Filter and Minimum Value -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category-filter">Category Filter</label>
+                            <input type="text" id="category-filter" name="category-filter" placeholder="Leave blank for all categories">
+                        </div>
+                        <div class="form-group">
+                            <label for="min-value">Minimum Item Value</label>
+                            <input type="number" id="min-value" name="min-value" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+                    <!-- Report Notes Textarea -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="report-notes">Report Notes</label>
+                            <textarea id="report-notes" name="report-notes" rows="3" placeholder="Any notes to include in the report..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== FORM ACTION BUTTONS ========== -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-file-download"></i> Generate Report
+                    </button>
+                    <button type="reset" class="btn btn-outline">
+                        <i class="fas fa-undo"></i> Reset Form
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ========== SAMPLE REPORT OUTPUT ========== -->
+        <div class="report-output">
+            <h3><i class="fas fa-chart-bar"></i> Sample Inventory Turnover Report</h3>
+            
+            <!-- Sample data table showing inventory turnover metrics -->
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Product Category</th>
+                        <th>Beginning Inventory</th>
+                        <th>Ending Inventory</th>
+                        <th>Cost of Goods Sold</th>
+                        <th>Average Inventory</th>
+                        <th>Turnover Ratio</th>
+                        <th>Days to Sell</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Electronics</td>
+                        <td>$210,000</td>
+                        <td>$245,850</td>
+                        <td>$850,400</td>
+                        <td>$227,925</td>
+                        <td>3.73</td>
+                        <td>97.9</td>
+                    </tr>
+                    <tr>
+                        <td>Furniture</td>
+                        <td>$175,000</td>
+                        <td>$189,500</td>
+                        <td>$420,300</td>
+                        <td>$182,250</td>
+                        <td>2.31</td>
+                        <td>158.0</td>
+                    </tr>
+                    <tr>
+                        <td>Office Supplies</td>
+                        <td>$38,000</td>
+                        <td>$42,300</td>
+                        <td>$185,600</td>
+                        <td>$40,150</td>
+                        <td>4.62</td>
+                        <td>79.0</td>
+                    </tr>
+                    <tr>
+                        <td>Software</td>
+                        <td>$120,000</td>
+                        <td>$156,750</td>
+                        <td>$310,500</td>
+                        <td>$138,375</td>
+                        <td>2.24</td>
+                        <td>162.9</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total Inventory</td>
+                        <td>$543,000</td>
+                        <td>$634,400</td>
+                        <td>$1,766,800</td>
+                        <td>$588,700</td>
+                        <td>3.00</td>
+                        <td>121.7</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Report Analysis Section -->
+            <div class="report-analysis">
+                <h4>Report Analysis</h4>
+                <p>The inventory turnover ratio measures how many times a company sells and replaces its inventory during a period. A higher ratio generally indicates strong sales and effective inventory management.</p>
+                <p>Office supplies show the highest turnover ratio (4.62), indicating efficient management of this category. Furniture has the lowest ratio (2.31), suggesting potential overstocking or slower sales velocity.</p>
+                <p>For more information on inventory analysis metrics, visit the <a href="https://corporatefinanceinstitute.com/resources/accounting/inventory-turnover-ratio/" target="_blank">Corporate Finance Institute guide</a>.</p>
+            </div>
+        </div>
+
+        <!-- ========== DATA VISUALIZATION SECTION ========== -->
+        <div class="image-analysis">
+            <h3><i class="fas fa-chart-area"></i> Inventory Analysis Visualization</h3>
+            <div class="image-container">
+                <!-- Image with overlay text showing inventory trends -->
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Inventory data visualization" 
+                     class="analysis-image">
+                <div class="image-overlay">
+                    <h4>Inventory Trends</h4>
+                    <p>Visual representation of inventory turnover and valuation trends over time.</p>
+                </div>
+            </div>
+            <p class="image-caption">Inventory data visualization showing performance metrics across categories.</p>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Contains company info, quick links, and contact details -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Description -->
+                <div class="footer-section">
+                    <h4>InventoryPro</h4>
+                    <p>Professional inventory management solutions since 2010. Serving businesses worldwide with reliable, scalable inventory systems.</p>
+                </div>
+                <!-- Quick Links Navigation -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Current Inventory</a></li>
+                        <li><a href="add-item.html">Add New Item</a></li>
+                        <li><a href="reports.html">Generate Reports</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Information -->
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500</p>
+                    <p><i class="fas fa-phone"></i> (+233) 206-845-993</p>
+                    <p><i class="fas fa-envelope"></i> inventorypro@gmail.com</p>
+                </div>
+            </div>
+            <!-- Copyright Notice -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 InventoryPro Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
